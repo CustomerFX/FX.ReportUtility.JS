@@ -30,4 +30,4 @@ FX.ReportUtility.runReport('FAMILY:ReportName', '{ACCOUNT:ACCOUNTID} = "AXXXX000
 ```
 
 ## Limitations 
-**Note:** Currently, only string parameters are supported. It looks liek the job service might desreialize the JSON for the parameters, so there's a lot of extra baggage with them. At some point, I might retrieve the parameters from the report itself and then just set the values in the JSON to dynamically support any parameter type, but for now it will only do string parameters.
+**Note:** Currently, only string parameters are supported. It looks like the job service might desreialize the JSON for the parameters, so there's a lot of extra baggage being sent with them. At some point, I might dynamically retrieve the parameters from the report plugin itself (the way the report controller does now) and then just set the values in the JSON to dynamically support any parameter type, but for now it will only do string parameters.
