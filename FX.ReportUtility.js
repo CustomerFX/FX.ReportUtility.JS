@@ -22,7 +22,7 @@ function (
                 fileName = pluginName + '-' + (new Date()).toISOString().substring(0, 10);
                 
             var params = [];
-            parameters.forEach(function(p) { params.push(FX.ReportUtility.getParameter(p.name, p.value)); });
+            (parameters || []).forEach(function(p) { params.push(FX.ReportUtility.getParameter(p.name, p.value)); });
             
             var reportOptions = [
                 { 'name':'PluginFamily', 'value':pluginFamily },
