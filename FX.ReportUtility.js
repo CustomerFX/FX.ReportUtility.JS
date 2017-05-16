@@ -1,12 +1,12 @@
 define([
     'dojo/_base/declare', 
     'dojo/_base/lang',
-	'Sage/Utility/Jobs',
+    'Sage/Utility/Jobs',
 ],
 function (
     declare, 
     lang,
-	jobs
+    jobs
 ) {
     fxReportUtility = {
         
@@ -37,7 +37,7 @@ function (
             ];
             
             var options = {
-				key: 'Saleslogix.Reporting.Jobs.CrystalReportsJob',
+                key: 'Saleslogix.Reporting.Jobs.CrystalReportsJob',
                 reportType: 'Crystal', 
                 reportId: Sage.Services.getService('ReportingService').getReportId(reportName),
                 descriptor: fileName,
@@ -46,7 +46,7 @@ function (
                 parameters: reportOptions,
                 success: function(result) { console.log('FX.ReportUtility.runReport success', result); },
                 failure: function(result) { console.log('FX.ReportUtility.runReport failure', result); }
-            }
+            };
             jobs.triggerJobAndDisplayProgressDialog(options);
         },
         
