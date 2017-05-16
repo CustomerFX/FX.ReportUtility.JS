@@ -28,3 +28,6 @@ FX.ReportUtility.runReport('FAMILY:ReportName', null, [{name:'MyPrompt1', value:
 // export report, specify record selection formula, no parameters, include title and filename
 FX.ReportUtility.runReport('FAMILY:ReportName', '{ACCOUNT:ACCOUNTID} = "AXXXX0000001"', null, 'My Title', 'MyExportedFile');
 ```
+
+## Limitations 
+**Note:** Currently, only string parameters are supported. It looks liek the job service might desreialize the JSON for the parameters, so there's a lot of extra baggage with them. At some point, I might retrieve the parameters from the report itself and then just set the values in the JSON to dynamically support any parameter type, but for now it will only do string parameters.
