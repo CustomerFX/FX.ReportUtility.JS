@@ -1,3 +1,11 @@
+/*
+Customer FX Report Utility
+See license and information at https://github.com/CustomerFX/FX.ReportUtility.JS
+
+Copyright (c) 2017 Customer FX Corporation
+http://customerfx.com
+*/
+
 define([
     'dojo/_base/declare', 
     'dojo/_base/lang',
