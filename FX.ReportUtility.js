@@ -1,9 +1,9 @@
 /*
-Customer FX Report Utility
-See license and information at https://github.com/CustomerFX/FX.ReportUtility.JS
-
-Copyright (c) 2017 Customer FX Corporation
-http://customerfx.com
+	Customer FX Report Utility
+	See license and usage information at https://github.com/CustomerFX/FX.ReportUtility.JS
+	
+	Copyright (c) 2017 Customer FX Corporation
+	http://customerfx.com
 */
 
 define([
