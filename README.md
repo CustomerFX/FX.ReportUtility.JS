@@ -8,7 +8,7 @@ The FX.ReportUtility.JS module has a method named runReport which will trigger a
 The runReport method take the following parameters:
 * **reportName:** The Family:PluginName of the report to run
 * **recordSelection:** A valid Crystal Record Selection Formula. Set as null to not set a report filter
-* **parameters:** An array of objects with two properties: name and value. For example: [{name:'MyPrompt', value:'MyValue'}]. Set as null to not set any parameters
+* **parameters:** An array of objects with two properties for string parameters: name and value, for example: [{name:'MyPrompt', value:'MyValue'}], or with three properties for date range parameters, for example: [{name: 'MyDateRange', startValue: '2017-09-07', endValue: '2017-09-15'}]. Set as null to not set any parameters
 * **title:** (optional) Title of the progress dialog when exporting the report
 * **fileName:** (optional) Specify the name of the file you want to use for the exported file (no extension, just name)
 
@@ -30,4 +30,4 @@ FX.ReportUtility.runReport('FAMILY:ReportName', '{ACCOUNT:ACCOUNTID} = "AXXXX000
 ```
 
 ## Limitations 
-**Note:** Currently, only string parameters are supported. It looks like the job service might desreialize the JSON for the parameters, so there's a lot of extra baggage being sent with them. At some point, I might dynamically retrieve the parameters from the report plugin itself (the way the report controller does now) and then just set the values in the JSON to dynamically support any parameter type, but for now it will only do string parameters.
+**Note:** Currently, only string and date range parameters are supported. It looks like the job service might deserialize objects for the JSON for the parameters, so there's a lot of extra baggage being sent with them. At some point, I might dynamically retrieve the parameters from the report plugin itself (the way the report controller does now) and then just set the values in the JSON to dynamically support any parameter type, but for now it will only do these parameters.
