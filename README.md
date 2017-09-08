@@ -14,17 +14,17 @@ The runReport method take the following parameters:
 
 ## Samples
 
-```
+```javascript
 // export report, specify record selection formula & parameter
 FX.ReportUtility.runReport('FAMILY:ReportName', '{ACCOUNT:ACCOUNTID} = "AXXXX0000001"', [{name:'MyPrompt', value:'My Value'}]);
 ```
 
-```
+```javascript
 // export report, no record selection formula & multiple parameters
 FX.ReportUtility.runReport('FAMILY:ReportName', null, [{name:'MyPrompt1', value:'My Value 1'}, {name:'MyPrompt2', value:'My Value 2'}]);
 ```
 
-```
+```javascript
 // export report, specify record selection formula, no parameters, include title and filename
 FX.ReportUtility.runReport('FAMILY:ReportName', '{ACCOUNT:ACCOUNTID} = "AXXXX0000001"', null, 'My Title', 'MyExportedFile');
 ```
