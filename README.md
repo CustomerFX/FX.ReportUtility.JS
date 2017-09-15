@@ -1,9 +1,9 @@
-# FX.ReportUtility.JS
+# FX.ReportUtilityJS
 A utility module for client-side running reports in Infor CRM *and* programmatically setting report parameters/prompts
 
 ## Usage 
 
-The FX.ReportUtility.JS module has a method named runReport which will trigger a job to export a report to a PDF. What makes the FX.ReportUtility.JS different than the normal ReportService in Infor CRM is that you can also set report parameters/prompts via code. 
+The FX.ReportUtilityJS module has a method named runReport which will trigger a job to export a report to a PDF. What makes the FX.ReportUtilityJS different than the normal ReportService in Infor CRM is that you can also set report parameters/prompts via code. 
 
 The runReport method take the following parameters:
 * **reportName:** The Family:PluginName of the report to run
@@ -30,4 +30,4 @@ FX.ReportUtility.runReport('FAMILY:ReportName', '{ACCOUNT:ACCOUNTID} = "AXXXX000
 ```
 
 ## Limitations 
-**Note:** Currently, only string and date range parameters are supported. It looks like the job service might deserialize objects for the JSON for the parameters, so there's a lot of extra baggage being sent with them. At some point, I might dynamically retrieve the parameters from the report plugin itself (the way the report controller does now) and then just set the values in the JSON to dynamically support any parameter type, but for now it will only do these parameters.
+**Note:** Currently, only string and date range parameters are supported. It looks like the job service might deserialize objects for the JSON for the parameters, so there's a lot of extra baggage being sent with them. At some point, I might dynamically retrieve the parameters from the report plugin itself (the way the report controller does now) and then just set the values in the JSON to dynamically support any parameter type, but for now it will only do these parameters. I will likely continue to add support for more parameter types as I need them.
