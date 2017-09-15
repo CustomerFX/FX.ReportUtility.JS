@@ -1,8 +1,26 @@
 {
-    "name": "fx.reportutility.js",
+    "name": "fx.reportutilityjs",
+    "author": "Ryan Farley - Customer FX Corporation",
+    "homepage": "http://customerfx.com",
+    "license": "MIT",
     "version": "1.0.1",
+    "main": "src/main.js",
+    "files": [
+        "src"
+    ],
     "repository": {
         "type": "git",
-        "url": "https://github.com/CustomerFX/FX.ReportUtility.JS"
-    }
+        "url": "https://github.com/CustomerFX/FX.ReportUtilityJS"
+    },
+    "bugs": {
+        "url": "https://github.com/CustomerFX/FX.ReportUtilityJS/issues"
+    },
+    "keywords": [
+        "saleslogix",
+        "inforcrm",
+        "infor-crm",
+        "infor",
+        "reports",
+        "crystalreports"
+    ]
 }
