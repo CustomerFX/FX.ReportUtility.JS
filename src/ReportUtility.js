@@ -9,16 +9,22 @@
 define([
     'dojo/_base/declare', 
     'dojo/_base/lang',
+	'dojo/_base/connect',
+	'dojo/dom',
+	'dojo/query',
     'Sage/Utility/Jobs',
 ],
 function (
     declare, 
     lang,
+	connect,
+	dom,
+	query,
     jobs
 ) {
     var __reportUtility = {
         
-        runReport: function(reportName, recordSelection, parameters, title, fileName) {
+        runReport: function(reportName, recordSelection, parameters, title, fileName, completeMessage) {
             var reportNameParts = reportName.split(':'),
                 pluginName = reportNameParts[1],
                 pluginFamily = reportNameParts[0];
@@ -69,6 +75,19 @@ function (
             };
 			
             jobs.triggerJobAndDisplayProgressDialog(options);
+			
+			if (completeMessage) {
+				var hnd = connect.subscribe('/job/execution/changed', function(job) { 
+					if (job && job._options && job._options.title == options.title) {
+						var lnk = query('#progressDialogLinkDiv a').first();
+						if (lnk && lnk.attr('href') && lnk.attr('href').length && lnk.attr('href')[0].indexOf('javascript: Sage.Utility.File.Attachment.getAttachment') == 0) {
+							var elem = dom.byId('progressDialogMessageDiv');
+							if (elem) elem.innerHTML = completeMessage;
+						}
+						hnd.remove();
+					}
+				});
+			}
         },
         
         _getStringParameter: function(paramName, paramValue) {

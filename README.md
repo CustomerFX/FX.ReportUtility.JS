@@ -11,6 +11,7 @@ The runReport method take the following parameters:
 * **parameters:** An array of objects with two properties for string parameters: name and value, for example: [{name:'MyPrompt', value:'MyValue'}], or with three properties for date range parameters, for example: [{name: 'MyDateRange', startValue: '2017-09-07', endValue: '2017-09-15'}]. Set as null to not set any parameters
 * **title:** (optional) Title of the progress dialog when exporting the report
 * **fileName:** (optional) Specify the name of the file you want to use for the exported file (no extension, just name)
+* **completionMessage:** (optional) Specify a custom completion message for the report
 
 ## Samples
 
