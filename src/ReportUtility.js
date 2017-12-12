@@ -9,17 +9,17 @@
 define([
     'dojo/_base/declare', 
     'dojo/_base/lang',
-	'dojo/_base/connect',
-	'dojo/dom',
-	'dojo/query',
-    'Sage/Utility/Jobs',
+    'dojo/_base/connect',
+    'dojo/dom',
+    'dojo/query',
+    'Sage/Utility/Jobs'
 ],
 function (
     declare, 
     lang,
-	connect,
-	dom,
-	query,
+    connect,
+    dom,
+    query,
     jobs
 ) {
     var __reportUtility = {
