@@ -1,5 +1,6 @@
 define([
-    'FXReport/ReportUtility'
+    'FXReport/ReportUtility',
+    'Sage/Services/ReportingService'
 ], function () {
     // load & initialize 
 });
